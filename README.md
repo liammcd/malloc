@@ -9,7 +9,7 @@ Tests are run with ./mdriver [options]. Testcases can be found in the traces/ di
 
 Implementation found in mm.c 
 
-Uses sbrk system call to manually adjust program memory. Uses segregated, doubly-linked free lists to keep track of free blocks within the heap. Coalescing of free blocks is deferred until free() is called.
+Uses sbrk system call to manually adjust program memory. Uses segregated, doubly-linked free lists to keep track of free blocks within the heap. Coalescing of free blocks is deferred until free() is called. Uses 1-WORD sized header and footer tags to traverse blocks.
 
 16 free lists are kept for different block sizes to improve lookup performance and coalesced free blocks are added to the approriate list.
 
